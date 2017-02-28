@@ -3,8 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <title>单选框样式</title>
+    <style type="text/css" rel="stylesheet">
+        /*雪碧图*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .select,.checkbox,.checkbox_fa,.select_fa {
+            display: none;
+        }
+        .select + label {
+            border: none;
+            display: flex;
+            width: 16px;
+            height: 16px;
+            background: url('images/radio.png');
+            background-position: -24px -10px;
+        }
+
+        .select:checked + label {
+            background-position: -59px -10px;
+        }
+        .checkbox + label {
+            border: none;
+            display: flex;
+            width: 14px;
+            height: 14px;
+            background: url('images/radio.png');
+            background-position: -25px -33px;
+        }
+
+        .checkbox:checked + label {
+            background-position: -60px -32px;
+        }
+        /*伪元素*/
+        .select_fa + label,.checkbox_fa+label {
+            display: flex;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #d9d9d9;
+        }
+        .select_fa + label{
+            border-radius: 50%;
+        }
+
+        .select_fa:checked + label, .checkbox_fa:checked + label{
+            border: 1px solid #d73d32;
+            font-weight: 700;
+        }
+        .select_fa:checked + label::after{
+            margin: auto;
+            text-align: center;
+            content:' ';
+            width: 8px;
+            height: 8px;
+            line-height:8px;
+            background: #d73d32;
+            border-radius: 50%;
+        }
+        .checkbox_fa:checked + label::after{
+            margin: auto;
+            content: '\2714';
+            color: #d73d32;
+            width:8px;
+            height:8px;
+            line-height: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+    </style>
 </head>
 <body>
-uuu
+<!--单选框雪碧图-->
+<h2>
+    雪碧图
+</h2>
+<!--单选框雪碧图-->
+<div>
+    <input type="radio" name="select" class="select" id="select1">
+    <label for="select1"></label>
+    <input type="radio" name="select" class="select" id="select2">
+    <label for="select2"></label>
+</div>
+<!--复选框雪碧图-->
+<div>
+    <input type="checkbox" name="checkbox" class="checkbox" id="checkbox1">
+    <label for="checkbox1"></label>
+    <input type="checkbox" name="checkbox" class="checkbox" id="checkbox2">
+    <label for="checkbox2"></label>
+</div>
+
+<h2>
+    伪元素
+</h2>
+<!--单选框伪元素-->
+<div>
+    <input type="radio" name="select_fa" class="select_fa" id="select_fa1">
+    <label for="select_fa1"></label>
+    <input type="radio" name="select_fa" class="select_fa" id="select_fa2">
+    <label for="select_fa2"></label>
+</div>
+<!--复选框伪元素-->
+<div>
+    <input type="checkbox" name="checkbox_fa" class="checkbox_fa" id="checkbox_fa1">
+    <label for="checkbox_fa1"></label>
+    <input type="checkbox" name="checkbox_fa" class="checkbox_fa" id="checkbox_fa2">
+    <label for="checkbox_fa2"></label>
+</div>
+
 </body>
 </html>
